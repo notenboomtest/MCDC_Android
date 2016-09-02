@@ -39,6 +39,20 @@
         android:layout_alignParentBottom="false"
         android:layout_toRightOf="@id/valueLine"/>
 
+    <Button
+        android:id="@+id/buttonMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listview"
+        android:text="@string/button_mail"
+        android:onClick="createMail" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listview"
+        android:layout_toRightOf="@id/buttonMail"
+        android:text="@string/button_new"
+        android:onClick="newDecision" />
 
 </RelativeLayout>
