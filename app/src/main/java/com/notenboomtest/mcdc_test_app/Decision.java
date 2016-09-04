@@ -25,7 +25,7 @@ public class Decision {
     public List<Testcase> getTestcases(){
         return this.testcases;
     }
-    public String getSerializedResults() { return this.serialized(); }
+    public String getSerializedTestcases() { return this.serialized(); }
 
     private void extract(String raw){
         char[] elem = raw.toCharArray();
