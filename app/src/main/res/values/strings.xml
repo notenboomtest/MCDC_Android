@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MCDC_test_app</string>
+    <string name="edit_message">Enter a decision</string>
+    <string name="button_send">Create testcases</string>
+    <string name="button_mail">Mail result</string>
+    <string name="button_new">New</string>
+    <string name="instruction">Give a decision in the form A&amp;B|C (ignore parenthesis): </string>
+    <string name="valueHeader">Result</string>
+    <string name="sequence">Message</string>
+</resources>
