@@ -40,7 +40,7 @@ public class TestcasesActivity extends AppCompatActivity {
         //sequenceHeader.text = message;
         int size = decision.getTestcases().size();
 
-        final ArrayList<String> res = new ArrayList<String>();
+        final ArrayList<String> res = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             res.add(decision.getTestcases().get(i).getRes());
         }
@@ -50,7 +50,7 @@ public class TestcasesActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, res);
         resview.setAdapter(resAdapter);
 
-        final ArrayList<String> list = new ArrayList<String>();
+        final ArrayList<String> list = new ArrayList<>();
         for (int i = 0; i < size; ++i) {
             list.add(decision.getTestcases().get(i).getSeq());
         }
@@ -74,7 +74,7 @@ public class TestcasesActivity extends AppCompatActivity {
         String message = textView.getText().toString();
         email.putExtra(Intent.EXTRA_EMAIL, "");
         email.putExtra(Intent.EXTRA_SUBJECT, message);
-        email.putExtra(Intent.EXTRA_TEXT, decision.getSerializedResults());
+        email.putExtra(Intent.EXTRA_TEXT, decision.getSerializedTestcases());
 
         //need this to prompts email client only
         email.setType("message/rfc822");
@@ -84,7 +84,7 @@ public class TestcasesActivity extends AppCompatActivity {
 
     private class TestcaseArrayAdapter extends ArrayAdapter<String> {
 
-        HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+        HashMap<String, Integer> mIdMap = new HashMap<>();
 
         public TestcaseArrayAdapter(Context context, int textViewResourceId,
                                   List<String> objects) {
