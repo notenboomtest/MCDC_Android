@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/sequenceHeader"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/valueHeader"
         android:layout_toRightOf="@id/valueHeader"
@@ -32,6 +32,7 @@
         android:layout_below="@id/valueHeader"
         android:layout_alignParentBottom="false"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:textSize="12sp" />
 
 
