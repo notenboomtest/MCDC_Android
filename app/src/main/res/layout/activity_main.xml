@@ -16,9 +16,25 @@
         android:layout_below="@id/instructionHeader"
         android:hint="@string/edit_message" />
     <Button
+        android:id="@+id/andButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_message"
+        android:text="@string/andbutton"/>
+    <Button
+        android:id="@+id/orButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_message"
+        android:layout_toRightOf="@id/andButton"
+        android:layout_toEndOf="@id/andButton"
+        android:text="@string/orbutton"/>
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/andButton"
         android:text="@string/button_send"
         android:onClick="createTestcases" />
+
 </RelativeLayout>

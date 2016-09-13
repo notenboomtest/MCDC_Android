@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,10 +17,29 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.notenboomtest.mcdc_test_app.MESSAGE";
 
-    @Override
+    private View.OnClickListener mAndListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            EditText editText = (EditText) findViewById(R.id.edit_message);
+            editText.append("&");
+        }
+    };
+
+    private View.OnClickListener mOrListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            EditText editText = (EditText) findViewById(R.id.edit_message);
+            editText.append("|");
+        }
+    };
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button andButton = (Button)findViewById(R.id.andButton);
+        andButton.setOnClickListener(mAndListener);
+
+        Button orButton = (Button)findViewById(R.id.orButton);
+        orButton.setOnClickListener(mOrListener);
     }
 
     public void createTestcases(View view) {
@@ -49,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         }
+
+
 
     }
     private boolean doubles(String sequence){
