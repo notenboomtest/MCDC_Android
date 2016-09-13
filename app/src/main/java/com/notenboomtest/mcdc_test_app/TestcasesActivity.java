@@ -28,21 +28,19 @@ public class TestcasesActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        //TextView textView = new TextView(this);
-
-//        String result = "Been here!";
-//        Decision decision = new Decision();
         decision.solve(message);
 
         TextView header = (TextView) findViewById(R.id.sequenceHeader);
         header.setText(message);
 
-        //sequenceHeader.text = message;
         int size = decision.getTestcases().size();
 
         final ArrayList<String> res = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            res.add(decision.getTestcases().get(i).getRes());
+        for (int i = 0; i <size; i++){
+            String result = decision.getTestcases().get(i).getRes();
+            String seq = decision.getTestcases().get(i).getSeq();
+            String str = String.format("%2$-11s %1$s", seq, result);
+            res.add(str);
         }
 
         final ListView resview = (ListView) findViewById(R.id.valueLine);
@@ -54,12 +52,6 @@ public class TestcasesActivity extends AppCompatActivity {
         for (int i = 0; i < size; ++i) {
             list.add(decision.getTestcases().get(i).getSeq());
         }
-
-        final ListView listview = (ListView) findViewById(R.id.listview);
-        final TestcaseArrayAdapter adapter = new TestcaseArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
-        listview.setAdapter(adapter);
-
     }
 
     public void newDecision(View view) {

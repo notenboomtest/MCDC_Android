@@ -3,15 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/buttonMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_mail"
+        android:onClick="createMail" />
+
+    <Button
+        android:id="@+id/buttonNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/buttonMail"
+        android:layout_toRightOf="@id/buttonMail"
+        android:text="@string/button_new"
+        android:onClick="newDecision" />
+
     <TextView
         android:id="@+id/valueHeader"
-        android:layout_width="100dp"
+        android:layout_width="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_below="@id/buttonMail"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:text="@string/valueHeader"
         android:textSize="20sp"/>
 
@@ -21,13 +36,13 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/valueHeader"
         android:layout_toRightOf="@id/valueHeader"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/buttonNew"
         android:text="@string/sequence"
         android:textSize="20sp"/>
 
     <ListView
         android:id="@+id/valueLine"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/valueHeader"
         android:layout_alignParentBottom="false"
@@ -44,22 +59,5 @@
         android:layout_alignParentBottom="false"
         android:layout_toEndOf="@id/valueLine"
         android:layout_toRightOf="@id/valueLine"/>
-
-    <Button
-        android:id="@+id/buttonMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/listview"
-        android:text="@string/button_mail"
-        android:onClick="createMail" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/listview"
-        android:layout_toEndOf="@id/buttonMail"
-        android:layout_toRightOf="@id/buttonMail"
-        android:text="@string/button_new"
-        android:onClick="newDecision" />
 
 </RelativeLayout>
